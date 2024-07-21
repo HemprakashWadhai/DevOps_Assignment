@@ -37,10 +37,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up kubectl
-      uses: kubernetes-actions/setup-kubectl@v1
+    - name: Set up gcloud
+      uses: google-github-actions/setup-gcloud@v2
       with:
         version: 'v1.18.0'
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+    - name: Set up kubectl
+      run: |
+        gcloud components install kubectl
 
     - name: Deploy to Kubernetes
       run: |
