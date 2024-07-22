@@ -1,0 +1,19 @@
+# Log File Analyzer
+
+This repository contains a Python script to analyze web server logs. The script performs the following tasks:
+1. Counts the number of 404 errors in the log file.
+2. Identifies the most requested pages.
+3. Lists the most frequent IP addresses making requests.
+
+## Prerequisites
+
+- Python 3.12 or higher
+- Required Python packages: `re`, `collections`
+
+## Setup
+
+1. **Clone the Repository**
+
+   Clone the repository to your local machine:
+   ```sh
+   git clone https://github.com/YourUsername/YourRepository.git
