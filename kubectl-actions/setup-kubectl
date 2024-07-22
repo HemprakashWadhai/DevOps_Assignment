@@ -14,9 +14,10 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Set up kubectl
-      uses: kubernetes-actions/setup-kubectl@v1  # Ensure this action exists
+      uses: azure/setup-kubectl@v1  # Ensure this action exists
       with:
         version: 'v1.24.0'  # Specify the exact version if necessary
+
 
     - name: Issue Certificate
       run: |
