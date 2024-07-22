@@ -38,7 +38,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Set up kubectl
-      uses: kubernetes-actions/setup-kubectl@v1  # Use this if azure/setup-kubectl is unavailable
+      uses: azure/setup-kubectl@v1  # Ensure this action version is available
       with:
         version: 'v1.24.0'
 
