@@ -14,10 +14,12 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Set up kubectl
-      uses: azure/setup-kubectl@v1  # Use v1 or latest version
+      uses: kubernetes-actions/setup-kubectl@v1  # Ensure this action exists
       with:
         version: 'v1.24.0'  # Specify the exact version if necessary
 
     - name: Issue Certificate
       run: |
         kubectl apply -f .github/workflows/certificate-issuer.yaml
+      env:
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}  # Make sure this secret is set in your repository
